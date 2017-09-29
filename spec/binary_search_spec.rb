@@ -39,5 +39,19 @@ describe BinarySearch do
       end
     end
   end
+
+  describe 'imperative chop' do
+    it 'returns index of element when found' do
+      POSITIVE_DATA.each do |test|
+        expect(subject.imperative_chop(test[:needle], test[:haystack])).to eq(test[:result])
+      end
+    end
+
+    it 'returns -1 when element is not found' do
+      NEGATIVE_DATA.each do |test|
+        expect(subject.imperative_chop(test[:needle], test[:haystack])).to eq(test[:result])
+      end
+    end
+  end
 end
 
